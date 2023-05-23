@@ -3,16 +3,16 @@ import axios from 'axios';
 
 const token = localStorage.getItem('token');
 
-// GET: http://localhost:8800/api/spares/
+// GET: https://truckapi.eneserden.com/api/spares/
 export const fetchspares = createAsyncThunk('spare/fetchspares', async () => {
-    const response = await axios.get('http://localhost:8800/api/spares/');
+    const response = await axios.get('https://truckapi.eneserden.com/api/spares/');
     return response.data;
 });
 
-// POST: http://localhost:8800/api/spares/
+// POST: https://truckapi.eneserden.com/api/spares/
 export const createspare = createAsyncThunk('spare/createspare', async (spareData) => {
     // with token
-    const response = await axios.post('http://localhost:8800/api/spares/', spareData, {
+    const response = await axios.post('https://truckapi.eneserden.com/api/spares/', spareData, {
         headers: {
             Authorization: `Bearer ${token}`,
         }
@@ -23,7 +23,7 @@ export const createspare = createAsyncThunk('spare/createspare', async (spareDat
 
 export const updatespare = createAsyncThunk('spare/updatespare', async (spareData) => {
     // with token
-    const response = await axios.put(`http://localhost:8800/api/spares/${spareData.id}`, spareData, {
+    const response = await axios.put(`https://truckapi.eneserden.com/api/spares/${spareData.id}`, spareData, {
         headers: {
             Authorization: `Bearer ${token}`,
         }
@@ -32,10 +32,10 @@ export const updatespare = createAsyncThunk('spare/updatespare', async (spareDat
     return response.data;
 });
 
-// DELETE: http://localhost:8800/api/spares/{id}
+// DELETE: https://truckapi.eneserden.com/api/spares/{id}
 export const deletespare = createAsyncThunk('spare/deletespare', async (id) => {
     // with token
-    await axios.delete(`http://localhost:8800/api/spares/${id}`, {
+    await axios.delete(`https://truckapi.eneserden.com/api/spares/${id}`, {
         headers: {
             Authorization: `Bearer ${token}`,
         }

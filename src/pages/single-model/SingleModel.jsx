@@ -18,7 +18,7 @@ const SingleModel = () => {
 
   const location = useLocation();
   const dispatch = useDispatch();
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const response = useSelector((state) => state.model.models);
   const status = useSelector((state) => state.model.status);

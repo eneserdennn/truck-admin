@@ -14,7 +14,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:8800/api/auth/login', {
+            const response = await axios.post('https://truckapi.eneserden.com/api/auth/login', {
                 username,
                 password
             });

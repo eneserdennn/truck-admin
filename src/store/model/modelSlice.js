@@ -3,16 +3,16 @@ import axios from 'axios';
 
 const token = localStorage.getItem('token');
 
-// GET: http://localhost:8800/api/models/
+// GET: https://truckapi.eneserden.com/api/models/
 export const fetchModels = createAsyncThunk('model/fetchModels', async () => {
-    const response = await axios.get('http://localhost:8800/api/models/');
+    const response = await axios.get('https://truckapi.eneserden.com/api/models/');
     return response.data;
 });
 
-// POST: http://localhost:8800/api/models/
+// POST: https://truckapi.eneserden.com/api/models/
 export const createModel = createAsyncThunk('model/createModel', async (modelData) => {
     // with token
-    const response = await axios.post('http://localhost:8800/api/models/', modelData, {
+    const response = await axios.post('https://truckapi.eneserden.com/api/models/', modelData, {
         headers: {
             Authorization: `Bearer ${token}`,
         }
@@ -23,7 +23,7 @@ export const createModel = createAsyncThunk('model/createModel', async (modelDat
 
 export const updateModel = createAsyncThunk('model/updateModel', async (modelData) => {
     // with token
-    const response = await axios.put(`http://localhost:8800/api/models/${modelData.id}`, modelData, {
+    const response = await axios.put(`https://truckapi.eneserden.com/api/models/${modelData.id}`, modelData, {
         headers: {
             Authorization: `Bearer ${token}`,
         }
@@ -32,10 +32,10 @@ export const updateModel = createAsyncThunk('model/updateModel', async (modelDat
     return response.data;
 });
 
-// DELETE: http://localhost:8800/api/models/{id}
+// DELETE: https://truckapi.eneserden.com/api/models/{id}
 export const deleteModel = createAsyncThunk('model/deleteModel', async (id) => {
     // with token
-    await axios.delete(`http://localhost:8800/api/models/${id}`, {
+    await axios.delete(`https://truckapi.eneserden.com/api/models/${id}`, {
         headers: {
             Authorization: `Bearer ${token}`,
         }

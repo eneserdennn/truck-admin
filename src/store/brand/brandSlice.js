@@ -3,16 +3,16 @@ import axios from 'axios';
 
 const token = localStorage.getItem('token');
 
-// GET: http://localhost:8800/api/brands/
+// GET: https://truckapi.eneserden.com/api/brands/
 export const fetchbrands = createAsyncThunk('brand/fetchbrands', async () => {
-    const response = await axios.get('http://localhost:8800/api/brands/');
+    const response = await axios.get('https://truckapi.eneserden.com/api/brands/');
     return response.data;
 });
 
-// POST: http://localhost:8800/api/brands/
+// POST: https://truckapi.eneserden.com/api/brands/
 export const createbrand = createAsyncThunk('brand/createbrand', async (brandData) => {
     // with token
-    const response = await axios.post('http://localhost:8800/api/brands/', brandData, {
+    const response = await axios.post('https://truckapi.eneserden.com/api/brands/', brandData, {
         headers: {
             Authorization: `Bearer ${token}`,
         }
@@ -23,7 +23,7 @@ export const createbrand = createAsyncThunk('brand/createbrand', async (brandDat
 
 export const updatebrand = createAsyncThunk('brand/updatebrand', async (brandData) => {
     // with token
-    const response = await axios.put(`http://localhost:8800/api/brands/${brandData.id}`, brandData, {
+    const response = await axios.put(`https://truckapi.eneserden.com/api/brands/${brandData.id}`, brandData, {
         headers: {
             Authorization: `Bearer ${token}`,
         }
@@ -32,10 +32,10 @@ export const updatebrand = createAsyncThunk('brand/updatebrand', async (brandDat
     return response.data;
 });
 
-// DELETE: http://localhost:8800/api/brands/{id}
+// DELETE: https://truckapi.eneserden.com/api/brands/{id}
 export const deletebrand = createAsyncThunk('brand/deletebrand', async (id) => {
     // with token
-    await axios.delete(`http://localhost:8800/api/brands/${id}`, {
+    await axios.delete(`https://truckapi.eneserden.com/api/brands/${id}`, {
         headers: {
             Authorization: `Bearer ${token}`,
         }
