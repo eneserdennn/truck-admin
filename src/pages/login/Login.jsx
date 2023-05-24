@@ -1,9 +1,9 @@
 // LoginPage.js
 
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import './login.scss';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -18,7 +18,6 @@ const Login = () => {
                 username,
                 password
             });
-
             const token = response.data.token;
             localStorage.setItem('token', token);
             navigate('/'); // Ana sayfaya yönlendirme

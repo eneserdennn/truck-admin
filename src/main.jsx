@@ -1,11 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import App from "./App";
-import {DarkModeContextProvider} from "./context/darkModeContext";
+import {DarkModeContextProvider} from "./context/darkModeContext.jsx";
 import store from "./store/store";
 import {Provider} from 'react-redux'
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <DarkModeContextProvider>
             <Provider store={store}>
@@ -13,5 +13,4 @@ ReactDOM.render(
             </Provider>
         </DarkModeContextProvider>
     </React.StrictMode>,
-    document.getElementById("root")
 );

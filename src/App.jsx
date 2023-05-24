@@ -18,28 +18,19 @@ import Spares from "./pages/spares/Spares";
 
 function App() {
     const { darkMode } = useContext(DarkModeContext);
-
-
     return (
         <div className={darkMode ? 'app dark' : 'app'}>
             <BrowserRouter>
-
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/login" element={<Login />} />
-
-                        <Route path="/models" element={<Models />} />
-                        <Route path="/models/:modelId" element={<SingleModel />} />
-
-
-                        <Route path="/brands" element={<Brands />} />
-                        <Route path="/brands/:brandId" element={<SingleBrand />} />
-
-                        <Route path="/spares" element={<Spares />} />
-                        <Route path="/spares/:spareId" element={<SingleSpare />} />
-
-
-                    </Routes>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/models" element={<Models />} />
+                    <Route path="/models/:modelId" element={<SingleModel />} />
+                    <Route path="/brands" element={<Brands />} />
+                    <Route path="/brands/:brandId" element={<SingleBrand />} />
+                    <Route path="/spares" element={<Spares />} />
+                    <Route path="/spares/:spareId" element={<SingleSpare />} />
+                </Routes>
             </BrowserRouter>
         </div>
     );
